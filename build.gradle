@@ -1,0 +1,35 @@
+apply from: '../RLibrary/lib.gradle'
+
+def nim_ver = "5.0.0" //5.0.0
+
+android {
+
+    defaultConfig {
+        manifestPlaceholders = [
+                APPLICATION_ID: "$application_id",
+                NIM_APPKEY: "98bc106cc840b07c869ec279a7d58d38"
+        ]
+
+        //请记得调用RNim.init(), 初始化!
+    }
+}
+
+dependencies {
+    // 基础功能 (必需)
+    api "com.netease.nimlib:basesdk:${nim_ver}"
+
+    // 音视频需要
+    api "com.netease.nimlib:avchat:${nim_ver}"
+
+    // 聊天室需要
+    api "com.netease.nimlib:chatroom:${nim_ver}"
+
+    // 音视频和互动白板服务需要
+    api "com.netease.nimlib:nrtc:${nim_ver}"
+
+    // 实时会话服务需要
+    api "com.netease.nimlib:rts:${nim_ver}"
+
+    // 全文检索服务需要
+    api "com.netease.nimlib:lucene:${nim_ver}"
+}
