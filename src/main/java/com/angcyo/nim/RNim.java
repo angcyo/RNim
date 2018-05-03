@@ -38,3 +38,31 @@ public class RNim {
         }
     }
 }
+
+/**
+ * SDK接口	说明
+ * AuthService      	用户认证服务接口，提供登录注销接口。
+ * AuthServiceObserver      	用户认证服务观察者接口。
+ * MsgService	        消息服务接口，用于发送消息，管理消息记录等。同时还提供了发送自定义通知的接口。
+ * MsgServiceObserve        	接收消息，消息状态变化等观察者接口。
+ * LuceneService        	聊天消息全文检索接口。
+ * TeamService      	群组服务接口，用于发送群组消息，管理群组和群成员资料等。
+ * TeamServiceObserve       	群组和群成员资料变化观察者。
+ * SystemMessageService	        系统通知观察者。
+ * FriendService        	好友关系托管接口，目前支持添加、删除好友、获取好友列表、黑名单、设置消息提醒。
+ * FriendServiceObserve	        好友关系变更、黑名单变更通知观察者。
+ * UserService	        用户资料托管接口，提供获取用户资料、修改个人资料等。
+ * UserServiceObserve	        用户资料托管接口，提供获取用户资料、修改个人资料等。
+ * AVChatManager        	语音视频通话接口。
+ * RTSManager	        实时会话接口。
+ * NosService	        网易云存储服务，提供文件上传和下载。
+ * NosServiceObserve        	网易云存储传输进度观察者接口。
+ * MixPushService	        第三方推送接口，提供第三方推送服务。
+ * EventSubscribeService	        事件订阅服务接口，提供事件订阅等服务
+ * EventSubscribeServiceObserver        	事件状态变更观察者接口。
+ * RedPacketService	        红包接口。提供获取红包sdk token等功能。
+ * RobotService     	机器人操作相关接口，提供获取机器人、获取机器人信息、判断是否是机器人等功能。
+ * RobotServiceObserve      	机器人数据变更观察者接口。
+ * SettingsService      	系统设置接口。提供多端推送、免打扰配置
+ * SettingsServiceObserver      	系统设置变更观察者接口。
+ */
