@@ -105,7 +105,7 @@ object HistoryHelper {
 
             override fun onSucceed(bean: String?) {
                 super.onSucceed(bean)
-                L.w("HistoryHelper: 历史消息同步完成 -> 耗时:${(nowTime() - fetchStartTime).toHHmmss()} \n$bean")
+                L.w("HistoryHelper: 历史消息同步完成 -> 耗时:${(nowTime() - fetchStartTime).toHHmmss(true)} \n$bean")
                 fetchState = FetchState.SUCCESS
             }
 
