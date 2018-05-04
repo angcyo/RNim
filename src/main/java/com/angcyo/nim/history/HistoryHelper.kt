@@ -1,6 +1,7 @@
 package com.angcyo.nim.history
 
 import com.angcyo.library.utils.L
+import com.angcyo.uiview.kotlin.fullTime
 import com.angcyo.uiview.kotlin.nowTime
 import com.angcyo.uiview.kotlin.toHHmmss
 import com.angcyo.uiview.net.RException
@@ -125,15 +126,21 @@ object HistoryHelper {
                 .setCallback(object : RequestCallbackWrapper<MutableList<IMMessage>>() {
                     override fun onResult(code: Int, result: MutableList<IMMessage>?, exception: Throwable?) {
                         if (RUtils.isListEmpty(result)) {
+                            L.w("HistoryHelper: $sessionId 拉取消息结束1->")
+
                             //没有消息
                             countDownLatch?.countDown()
                         } else {
                             if (result!!.size < 100) {
+                                L.w("HistoryHelper: $sessionId 拉取消息结束2->${result!!.size}")
+
                                 //没有更多的消息
                                 countDownLatch?.countDown()
                             } else {
                                 //继续查询
-                                val firstTime = result!![0].time
+                                val firstTime = result!!.last().time //第一条消息的时间, 比最后一条消息的时间大
+
+                                L.w("HistoryHelper: $sessionId 继续拉取->${firstTime.fullTime()} -> ${endTime.fullTime()}")
                                 fetchMessage(sessionId, sessionType, firstTime, endTime)
                             }
                         }
